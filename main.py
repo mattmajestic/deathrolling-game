@@ -26,9 +26,12 @@ def start_game():
     )
     game_logic = GameLogic(game_state)
 
+    # Since it's Player 1's turn, the current_roll should be set to the wager amount
+    player1_initial_roll = game_logic.roll_dice(player=game_state.player1)
+
     return jsonify({
         'roll_count': roll_count,
-        'current_roll': game_state.player1.current_roll,
+        'current_roll': player1_initial_roll,  # Return the correct initial roll
         'status': "Game started!",
         'player1_status': game_state.player1.status,
         'player2_status': game_state.player2.status
@@ -38,17 +41,21 @@ def start_game():
 def roll_dice():
     global roll_count
     roll_count += 1
+
+    # Roll for the current player
+    current_player = game_logic._get_current_player()
     game_logic.roll_dice()
 
-    current_player = game_logic._get_current_player()
-    opponent_player = game_logic._get_opponent_player()
+    # Check if the game is over after the roll
+    game_over = game_state.game_over
+    winner = game_state.winner if game_over else None
 
     return jsonify({
         'roll_count': roll_count,
         'current_roll': current_player.current_roll,
-        'status': f"{current_player.status} | {opponent_player.status}",
-        'game_over': game_state.game_over,
-        'winner': game_state.winner
+        'status': f"{current_player.name} rolled {current_player.current_roll}",
+        'game_over': game_over,
+        'winner': winner
     })
 
 if __name__ == '__main__':

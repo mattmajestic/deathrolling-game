@@ -2,31 +2,36 @@ import random
 from models import GameState
 
 class GameLogic:
-    def __init__(self, game_state: GameState):
+    def __init__(self, game_state):
         self.game_state = game_state
 
-    def roll_dice(self):
-        current_player = self._get_current_player()
-        opponent_player = self._get_opponent_player()
+    def roll_dice(self, player=None):
+        if player is None:
+            player = self._get_current_player()
 
-        # The current player's roll is between 1 and the opponent's last roll
-        new_roll = random.randint(1, opponent_player.current_roll)
-        current_player.current_roll = new_roll
-        current_player.status = f"{current_player.name} rolled a {new_roll}."
+        # Roll the dice
+        player.current_roll = random.randint(1, player.current_roll)
+        player.is_turn = False
 
-        if new_roll == 1:
+        # Check if game over
+        if player.current_roll == 1:
             self.game_state.game_over = True
-            self.game_state.winner = opponent_player.name
-            current_player.status = f"{current_player.name} rolled a 1 and lost the game!"
-        else:
-            self._switch_turn()
+            self.game_state.winner = self._get_opponent_player().name
+
+        # Switch turns
+        self._switch_turns()
+        return player.current_roll
 
     def _get_current_player(self):
-        return self.game_state.player1 if self.game_state.player1.is_turn else self.game_state.player2
+        if self.game_state.player1.is_turn:
+            return self.game_state.player1
+        return self.game_state.player2
 
     def _get_opponent_player(self):
-        return self.game_state.player2 if self.game_state.player1.is_turn else self.game_state.player1
+        if self.game_state.player1.is_turn:
+            return self.game_state.player2
+        return self.game_state.player1
 
-    def _switch_turn(self):
+    def _switch_turns(self):
         self.game_state.player1.is_turn = not self.game_state.player1.is_turn
         self.game_state.player2.is_turn = not self.game_state.player2.is_turn

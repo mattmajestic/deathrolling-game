@@ -11,6 +11,11 @@
     <div class="container">
         <h1>Deathrolling Game</h1>
         <div class="game-box">
+            <div id="start-game">
+                <label for="wager_amount">Wager Amount $</label>
+                <input type="number" id="wager_amount" min="1" value="1000">
+                <button onclick="startGame()">Start Game</button>
+            </div>
             <div id="game-info" style="display:none;">
                 <p id="current-roll" class="current-roll"></p>
                 <p id="status"></p>
@@ -24,11 +29,7 @@
                     </thead>
                     <tbody id="roll-list"></tbody>
                 </table>
-            </div>
-            <div id="start-game">
-                <label for="wager_amount">Wager Amount $</label>
-                <input type="number" id="wager_amount" min="1" value="1000">
-                <button onclick="startGame()">Start Game</button>
+                <button id="new-game-button" style="display:none;" onclick="newGame()">New Game</button>
             </div>
         </div>
     </div>

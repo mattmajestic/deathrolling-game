@@ -83,3 +83,19 @@ button:hover {
 #game-table .round {
     color: #ffffff;
 }
+
+/* Add these styles to your existing CSS */
+#new-game-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF4500;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#new-game-button:hover {
+    background-color: #FF6347;
+}
