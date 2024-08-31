@@ -1,0 +1,11 @@
+
+services:
+  deathrolling-app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    command: python app.py
