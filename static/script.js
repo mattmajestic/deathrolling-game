@@ -94,14 +94,6 @@ function updateTable() {
     }
 }
 
-function confetti() {
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-}
-
 function newGame() {
     // Reset the UI for a new game
     document.getElementById('start-game').style.display = 'block';
@@ -111,3 +103,12 @@ function newGame() {
     player1Roll = null;
     player2Roll = null;
 }
+
+document.getElementById('theme-toggle-button').addEventListener('click', function() {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+        this.innerHTML = '🌞 Mode'; // Switch to Sun emoji for light mode
+    } else {
+        this.innerHTML = '💀 Mode'; // Switch to Skull emoji for dark mode
+    }
+});
