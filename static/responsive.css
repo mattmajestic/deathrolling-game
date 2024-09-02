@@ -1,0 +1,31 @@
+/* responsive.css */
+
+/* Styles for screens smaller than 600px */
+@media (max-width: 600px) {
+    .content-wrapper {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    label, input, button {
+        font-size: 14px;
+    }
+
+    #game-table th, #game-table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    #start-game, #game-info {
+        max-width: 100%;
+    }
+
+    #new-game-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
