@@ -1,0 +1,19 @@
+/* Layout & Container Styles */
+.container {
+    background-color: #111; /* Darker background for the game box */
+    padding: 30px;
+    border: 4px solid #00FF00; /* Bright green border */
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00FF00;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 200px; /* Adjust the width as needed */
+}

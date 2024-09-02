@@ -1,9 +1,11 @@
+// game.js
+
 let intervalId;
 let roundCounter = 1;
 let player1Roll = null;
 let player2Roll = null;
 
-function startGame() {
+export function startGame() {
     const wager_amount = document.getElementById('wager_amount').value;
 
     fetch('/start_game', {
@@ -27,7 +29,7 @@ function startGame() {
     });
 }
 
-function rollDice() {
+export function rollDice() {
     fetch('/roll_dice', {
         method: 'POST'
     })
@@ -94,7 +96,7 @@ function updateTable() {
     }
 }
 
-function newGame() {
+export function newGame() {
     // Reset the UI for a new game
     document.getElementById('start-game').style.display = 'block';
     document.getElementById('game-info').style.display = 'none';
@@ -102,36 +104,4 @@ function newGame() {
     roundCounter = 1;
     player1Roll = null;
     player2Roll = null;
-}
-
-document.getElementById('theme-toggle-button').addEventListener('click', function() {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
-        this.innerHTML = '🌞 Mode'; // Switch to Sun emoji for light mode
-    } else {
-        this.innerHTML = '💀 Mode'; // Switch to Skull emoji for dark mode
-    }
-});
-
-function connectPlayer() {
-    const username = prompt("Please enter your username:");
-    if (username) {
-        document.getElementById('player-connect').innerHTML = `<p>Connected as: ${username}</p>`;
-    }
-}
-
-function openModal() {
-    document.getElementById('usernameModal').style.display = 'flex';
-}
-
-function closeModal() {
-    document.getElementById('usernameModal').style.display = 'none';
-}
-
-function submitUsername() {
-    const username = document.getElementById('username-input').value;
-    if (username) {
-        document.getElementById('player-connect').innerHTML = `<p>Connected as: ${username}</p>`;
-        closeModal();
-    }
 }

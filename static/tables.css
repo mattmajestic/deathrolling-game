@@ -1,0 +1,27 @@
+/* Table Styles */
+#game-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#game-table th, #game-table td {
+    border: 1px solid #00FF00;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#game-table th {
+    background-color: #111;
+    color: #00FF00;
+}
+
+#game-table td {
+    background-color: #222;
+    color: #00FF00;
+}
+
+.current-roll {
+    font-size: 20px;
+    margin: 20px 0;
+}

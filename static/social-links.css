@@ -1,0 +1,11 @@
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-links a img {
+    height: 40px; /* Ensures all badges are the same height */
+}

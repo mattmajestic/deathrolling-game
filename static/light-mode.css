@@ -1,0 +1,55 @@
+/* Light Mode Styles */
+.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.light-mode .container {
+    background-color: #fff;
+    border-color: #333;
+    box-shadow: 0 0 20px #333;
+}
+
+.light-mode label,
+.light-mode input[type="number"],
+.light-mode button#start-game-button,
+.light-mode #theme-toggle-button {
+    border-color: #333;
+    color: #333;
+    background-color: #ccc;
+}
+
+.light-mode input[type="number"] {
+    background-color: #fff;
+}
+
+.light-mode button#start-game-button {
+    background-color: #0a7a9f; /* Maintain magenta color for light mode */
+    color: #000;
+}
+
+.light-mode button#start-game-button:hover {
+    background-color: #0a7a9f; /* Darker magenta on hover */
+}
+
+.light-mode #theme-toggle-button {
+    background-color: #777784; /* Maintain green for toggle button */
+}
+
+.light-mode #theme-toggle-button:hover {
+    background-color: #777784;
+}
+
+.light-mode #game-table th,
+.light-mode #game-table td {
+    border-color: #333;
+    color: #333;
+}
+
+.light-mode #game-table th {
+    background-color: #ddd;
+}
+
+.light-mode #game-table td {
+    background-color: #eee;
+}

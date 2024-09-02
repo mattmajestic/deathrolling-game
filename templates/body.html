@@ -1,0 +1,37 @@
+<!-- templates/body.html -->
+<div class="content-wrapper">
+    <h1>Deathrolling Game</h1>
+
+    <!-- Start Game Section -->
+    <div id="start-game">
+        <label for="wager_amount">Wager Amount $</label>
+        <input type="number" id="wager_amount" min="1" value="1000">
+
+        <!-- Player Connect Section -->
+        <div id="player-connect">
+            <button id="connect-button">🔑 Login</button>
+        </div>
+
+        <button id="start-game-button">Start Game</button>
+    </div>
+
+    <!-- Game Info Section (Initially Hidden) -->
+    <div id="game-info" style="display:none;">
+        <p id="current-roll" class="current-roll"></p>
+        <p id="status"></p>
+
+        <!-- Game Table -->
+        <table id="game-table">
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th>Player 1 Roll</th>
+                    <th>Player 2 Roll</th>
+                </tr>
+            </thead>
+            <tbody id="roll-list"></tbody>
+        </table>
+        
+        <!-- New Game Button (Initially Hidden) -->
+        <button id="new-game-button" style="display:none;">New Game</button>
+    </div>

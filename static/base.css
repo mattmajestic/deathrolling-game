@@ -1,0 +1,17 @@
+/* Base Styles */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000; /* Classic black background */
+    color: #00FF00; /* Bright green text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
