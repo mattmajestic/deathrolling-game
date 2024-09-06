@@ -2,6 +2,9 @@
 body {
     font-family: 'Press Start 2P', cursive;
     background-color: #000; /* Classic black background */
+    background-image: url("/static/images/temp.gif");
+    background-repeat: repeat; /* Repeats the GIF multiple times */
+    background-size: 150px 150px; /* Adjust the size of the repeated GIFs */
     color: #00FF00; /* Bright green text color */
     display: flex;
     justify-content: center;
