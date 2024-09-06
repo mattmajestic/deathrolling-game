@@ -7,6 +7,8 @@ This is a Flask-based web application for the popular game of Death Rolling, enh
 - Emoji-enhanced user interface
 - Dockerized for easy setup and deployment
 
+## QR code
+![QR Code](./static/images/qr_code.png)
 
 ## Setup
 
